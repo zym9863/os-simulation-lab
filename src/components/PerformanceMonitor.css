@@ -16,15 +16,17 @@
 
 .metric-label {
   font-size: 0.9rem;
-  color: var(--ion-color-medium);
+  color: var(--ion-text-color);
   margin-bottom: 4px;
   font-weight: 500;
+  opacity: 0.8;
 }
 
 .metric-status {
   font-size: 0.8rem;
-  color: var(--ion-color-medium-shade);
+  color: var(--ion-text-color);
   font-weight: 400;
+  opacity: 0.7;
 }
 
 .performance-suggestions {
@@ -129,5 +131,32 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* 暗色主题优化 */
+@media (prefers-color-scheme: dark) {
+  .performance-monitor {
+    border-color: var(--ion-color-step-100);
+    background: var(--ion-background-color);
+  }
+  
+  .performance-metric {
+    color: var(--ion-text-color);
+  }
+  
+  .metric-label,
+  .metric-status {
+    color: var(--ion-text-color);
+  }
+  
+  .performance-suggestions {
+    background: var(--ion-color-step-50);
+    border-left-color: var(--ion-color-warning);
+  }
+  
+  .performance-suggestions h4,
+  .performance-suggestions p {
+    color: var(--ion-text-color);
   }
 }

@@ -1,2 +1,76 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+
+/* 自定义主题变量 - 优化文字对比度 */
+:root {
+  /* 主要颜色 */
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+  
+  /* 文字颜色增强 */
+  --high-contrast-text: #000000;
+  --medium-contrast-text: #333333;
+  --low-contrast-text: #666666;
+}
+
+/* 亮色主题 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+    --ion-text-color-rgb: 0, 0, 0;
+    
+    --high-contrast-text: #000000;
+    --medium-contrast-text: #333333;
+    --low-contrast-text: #666666;
+  }
+}
+
+/* 暗色主题 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #0d1117;
+    --ion-background-color-rgb: 13, 17, 23;
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+    
+    --ion-color-step-50: #161b22;
+    --ion-color-step-100: #21262d;
+    --ion-color-step-150: #30363d;
+    --ion-color-step-200: #484f58;
+    
+    --high-contrast-text: #ffffff;
+    --medium-contrast-text: #e6edf3;
+    --low-contrast-text: #7d8590;
+    
+    /* 调整主要颜色在暗色主题下的对比度 */
+    --ion-color-primary: #4d8dff;
+    --ion-color-primary-tint: #79a6ff;
+    --ion-color-primary-shade: #3975e6;
+  }
+}
+
+/* 强制高对比度模式 */
+@media (prefers-contrast: high) {
+  :root {
+    --ion-color-primary-tint: var(--ion-color-primary);
+    --low-contrast-text: var(--medium-contrast-text);
+  }
+}
+
+/* 确保所有文字都有足够的对比度 */
+.high-contrast {
+  color: var(--high-contrast-text) !important;
+}
+
+.medium-contrast {
+  color: var(--medium-contrast-text) !important;
+}
+
+.low-contrast {
+  color: var(--low-contrast-text) !important;
+}

@@ -2,6 +2,8 @@
   border: 2px solid var(--ion-color-primary);
   border-radius: 8px;
   background: var(--ion-color-primary-tint);
+  /* 确保文字对比度 */
+  color: var(--ion-text-color);
 }
 
 .algorithm-content {
@@ -19,9 +21,10 @@
 }
 
 .algorithm-description p {
-  color: var(--ion-color-medium-shade);
+  color: var(--ion-text-color);
   line-height: 1.6;
   margin: 0;
+  font-weight: 500;
 }
 
 .algorithm-pros-cons {
@@ -54,6 +57,8 @@
 .cons li {
   margin-bottom: 4px;
   line-height: 1.4;
+  color: var(--ion-text-color);
+  font-weight: 500;
 }
 
 .algorithm-note {
@@ -119,7 +124,17 @@
 /* 手风琴样式优化 */
 ion-accordion.current-algorithm ion-item {
   --background: var(--ion-color-primary-tint);
-  --color: var(--ion-color-primary-contrast);
+  --color: var(--ion-text-color);
+}
+
+ion-accordion.current-algorithm ion-item h3 {
+  color: var(--ion-text-color) !important;
+  font-weight: 600;
+}
+
+ion-accordion.current-algorithm ion-item p {
+  color: var(--ion-text-color) !important;
+  opacity: 0.9;
 }
 
 ion-accordion ion-item {
@@ -130,11 +145,13 @@ ion-accordion ion-item {
 ion-accordion ion-item h3 {
   font-weight: 600;
   margin-bottom: 4px;
+  color: var(--ion-text-color);
 }
 
 ion-accordion ion-item p {
   font-size: 0.9rem;
   opacity: 0.8;
+  color: var(--ion-text-color);
 }
 
 /* 动画效果 */
@@ -165,5 +182,42 @@ ion-accordion ion-item p {
   
   .general-tips {
     padding: 12px;
+  }
+}
+
+/* 确保在不同主题下的文字对比度 */
+.current-algorithm .algorithm-content {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.current-algorithm .algorithm-content h4 {
+  color: var(--ion-text-color) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.current-algorithm .algorithm-content p,
+.current-algorithm .algorithm-content li {
+  color: var(--ion-text-color) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 暗色主题下的特殊处理 */
+@media (prefers-color-scheme: dark) {
+  .current-algorithm {
+    background: var(--ion-color-primary);
+    border-color: var(--ion-color-primary-shade);
+  }
+  
+  .current-algorithm .algorithm-content {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  .current-algorithm .algorithm-content h4,
+  .current-algorithm .algorithm-content p,
+  .current-algorithm .algorithm-content li {
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 }

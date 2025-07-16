@@ -45,8 +45,9 @@
 
 .step-content p {
   margin: 0;
-  color: var(--ion-color-medium-shade);
+  color: var(--ion-text-color);
   line-height: 1.5;
+  font-weight: 500;
 }
 
 .help-content h4 {
@@ -156,4 +157,25 @@ ion-accordion ion-item p {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+}
+
+/* 暗色主题优化 */
+@media (prefers-color-scheme: dark) {
+  .step-item {
+    background: var(--ion-color-step-50);
+    border-left-color: var(--ion-color-primary-tint);
+  }
+  
+  .step-title h4 {
+    color: var(--ion-color-primary-tint);
+  }
+  
+  .step-title ion-icon {
+    color: var(--ion-color-primary-tint);
+  }
+  
+  .step-content p {
+    color: var(--ion-text-color);
+    text-shadow: none;
+  }
 }
