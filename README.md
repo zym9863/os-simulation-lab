@@ -1,3 +1,6 @@
+
+<!-- 语言切换 | [English Version](./README_EN.md) -->
+
 # 操作系统模拟实验室
 
 一个基于 Ionic + React + TypeScript 的交互式操作系统概念学习平台，通过可视化模拟帮助理解操作系统的核心概念。
