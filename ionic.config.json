@@ -1,0 +1,7 @@
+{
+  "name": "OS Simulation Lab",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
