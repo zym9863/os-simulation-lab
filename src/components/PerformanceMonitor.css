@@ -1,0 +1,133 @@
+.performance-monitor {
+  margin-top: 20px;
+  border: 1px solid var(--ion-color-light);
+}
+
+.performance-metric {
+  text-align: center;
+  padding: 12px;
+}
+
+.performance-metric ion-chip {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.metric-status {
+  font-size: 0.8rem;
+  color: var(--ion-color-medium-shade);
+  font-weight: 400;
+}
+
+.performance-suggestions {
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--ion-color-warning-tint);
+  border-radius: 6px;
+  border-left: 4px solid var(--ion-color-warning);
+}
+
+.performance-suggestions h4 {
+  color: var(--ion-color-warning-shade);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.performance-suggestions p {
+  color: var(--ion-color-warning-shade);
+  margin: 4px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.system-info {
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--ion-color-light-tint);
+  border-radius: 6px;
+  border: 1px solid var(--ion-color-light);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: var(--ion-color-medium-shade);
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item strong {
+  color: var(--ion-color-dark);
+}
+
+/* 动画效果 */
+.performance-metric ion-chip {
+  transition: all 0.3s ease;
+}
+
+.performance-metric:hover ion-chip {
+  transform: scale(1.05);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .performance-metric {
+    padding: 8px;
+  }
+  
+  .performance-metric ion-chip {
+    font-size: 0.9rem;
+  }
+  
+  .system-info {
+    padding: 8px;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+
+/* 状态指示器 */
+.performance-metric ion-chip[color="success"] {
+  --background: var(--ion-color-success);
+  --color: var(--ion-color-success-contrast);
+}
+
+.performance-metric ion-chip[color="warning"] {
+  --background: var(--ion-color-warning);
+  --color: var(--ion-color-warning-contrast);
+  animation: pulse 2s infinite;
+}
+
+.performance-metric ion-chip[color="danger"] {
+  --background: var(--ion-color-danger);
+  --color: var(--ion-color-danger-contrast);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

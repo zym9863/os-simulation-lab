@@ -1,0 +1,322 @@
+.memory-container {
+  padding: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.memory-info {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* 内存可视化样式 */
+.memory-visualization {
+  margin: 20px 0;
+}
+
+.memory-bar {
+  width: 100%;
+  height: 60px;
+  border: 2px solid var(--ion-color-medium);
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.memory-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.memory-block:last-child {
+  border-right: none;
+}
+
+.memory-block:hover {
+  filter: brightness(1.1);
+  transform: scaleY(1.05);
+}
+
+.memory-block-allocated {
+  background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-primary-shade));
+}
+
+.memory-block-free {
+  background: linear-gradient(135deg, var(--ion-color-light), var(--ion-color-medium-tint));
+  color: var(--ion-color-dark);
+}
+
+.memory-block-info {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.memory-block-size {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* 内存块详细信息 */
+.memory-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.memory-detail-card {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ion-color-light);
+  background: var(--ion-color-light-tint);
+}
+
+.memory-detail-allocated {
+  border-color: var(--ion-color-primary);
+  background: var(--ion-color-primary-tint);
+}
+
+.memory-detail-free {
+  border-color: var(--ion-color-medium);
+  background: var(--ion-color-light);
+}
+
+.memory-detail-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--ion-color-dark);
+}
+
+.memory-detail-info {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium-shade);
+}
+
+/* 分配算法说明 */
+.algorithm-explanation {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--ion-color-light-tint);
+  border-radius: 8px;
+  border-left: 4px solid var(--ion-color-primary);
+}
+
+.algorithm-title {
+  font-weight: 600;
+  color: var(--ion-color-primary);
+  margin-bottom: 8px;
+}
+
+.algorithm-description {
+  color: var(--ion-color-medium-shade);
+  line-height: 1.5;
+}
+
+/* 碎片化指示器 */
+.fragmentation-indicator {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--ion-color-warning-tint);
+  border: 1px solid var(--ion-color-warning);
+}
+
+.fragmentation-title {
+  font-weight: 600;
+  color: var(--ion-color-warning-shade);
+  margin-bottom: 8px;
+}
+
+.fragmentation-info {
+  color: var(--ion-color-warning-shade);
+}
+
+.fragmentation-high {
+  background: var(--ion-color-danger-tint);
+  border-color: var(--ion-color-danger);
+}
+
+.fragmentation-high .fragmentation-title,
+.fragmentation-high .fragmentation-info {
+  color: var(--ion-color-danger-shade);
+}
+
+/* 统计信息样式 */
+.allocation-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--ion-color-light-tint);
+  border: 1px solid var(--ion-color-light);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium);
+  font-weight: 500;
+}
+
+/* 进程列表样式 */
+.process-list-item {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--ion-color-light);
+}
+
+.process-list-item:hover {
+  background: var(--ion-color-light-tint);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .memory-container {
+    padding: 12px;
+  }
+  
+  .memory-info {
+    justify-content: center;
+  }
+  
+  .memory-bar {
+    height: 50px;
+  }
+  
+  .memory-block {
+    font-size: 0.8rem;
+  }
+  
+  .memory-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .allocation-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .allocation-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .memory-bar {
+    height: 40px;
+  }
+  
+  .memory-block {
+    font-size: 0.7rem;
+  }
+}
+
+/* 动画效果 */
+.memory-block-enter {
+  animation: slideIn 0.5s ease-out;
+}
+
+.memory-block-exit {
+  animation: slideOut 0.5s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+/* 内存使用率指示器 */
+.memory-usage-indicator {
+  margin: 16px 0;
+}
+
+.usage-bar {
+  width: 100%;
+  height: 20px;
+  background: var(--ion-color-light);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.usage-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ion-color-success), var(--ion-color-warning), var(--ion-color-danger));
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+.usage-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ion-color-dark);
+}
+
+/* 性能建议样式 */
+.performance-suggestions {
+  background: var(--ion-color-light-tint);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid var(--ion-color-primary);
+}
+
+.suggestion-item:last-child {
+  margin-bottom: 0;
+}

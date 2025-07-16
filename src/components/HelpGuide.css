@@ -1,0 +1,159 @@
+.help-content {
+  padding: 16px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--ion-color-light-tint);
+  border-radius: 8px;
+  border-left: 4px solid var(--ion-color-primary);
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.step-title h4 {
+  margin: 0;
+  color: var(--ion-color-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.step-title ion-icon {
+  color: var(--ion-color-primary);
+}
+
+.step-content p {
+  margin: 0;
+  color: var(--ion-color-medium-shade);
+  line-height: 1.5;
+}
+
+.help-content h4 {
+  color: var(--ion-color-primary);
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.help-content h5 {
+  color: var(--ion-color-primary-shade);
+  margin-bottom: 8px;
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.help-content ul {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+}
+
+.help-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--ion-color-medium-shade);
+}
+
+.help-content li strong {
+  color: var(--ion-color-dark);
+}
+
+.tip-section {
+  margin-bottom: 20px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid var(--ion-color-light);
+}
+
+.tip-section:last-child {
+  margin-bottom: 0;
+}
+
+/* 手风琴样式优化 */
+ion-accordion ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-accordion ion-item h3 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+ion-accordion ion-item p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 动画效果 */
+.help-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .step-title {
+    justify-content: center;
+  }
+  
+  .help-content {
+    padding: 12px;
+  }
+  
+  .tip-section {
+    padding: 8px;
+  }
+}
+
+/* 特殊样式 */
+.help-content .step-item:nth-child(odd) {
+  border-left-color: var(--ion-color-secondary);
+}
+
+.help-content .step-item:nth-child(even) {
+  border-left-color: var(--ion-color-tertiary);
+}
+
+.help-content .step-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}

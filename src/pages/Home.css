@@ -1,0 +1,75 @@
+.home-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px 20px;
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--ion-color-primary);
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: var(--ion-color-medium);
+  margin: 0;
+}
+
+.feature-card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card ion-card-header {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.feature-card ion-icon {
+  margin-bottom: 16px;
+}
+
+.feature-card ion-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.feature-card ion-card-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ion-color-medium);
+  margin-bottom: 24px;
+}
+
+.feature-button {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-section p {
+    font-size: 1rem;
+  }
+
+  .home-container {
+    padding: 16px;
+  }
+}

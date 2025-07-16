@@ -1,0 +1,169 @@
+.current-algorithm {
+  border: 2px solid var(--ion-color-primary);
+  border-radius: 8px;
+  background: var(--ion-color-primary-tint);
+}
+
+.algorithm-content {
+  padding: 16px;
+}
+
+.algorithm-description {
+  margin-bottom: 20px;
+}
+
+.algorithm-description h4 {
+  color: var(--ion-color-primary);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.algorithm-description p {
+  color: var(--ion-color-medium-shade);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.algorithm-pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .algorithm-pros-cons {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.pros h4,
+.cons h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.pros ul,
+.cons ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.pros li,
+.cons li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.algorithm-note {
+  background: var(--ion-color-light-tint);
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid var(--ion-color-warning);
+  margin-top: 16px;
+}
+
+.algorithm-note h4 {
+  color: var(--ion-color-warning-shade);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.algorithm-note p {
+  color: var(--ion-color-medium-shade);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.general-tips {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--ion-color-light-tint);
+  border-radius: 8px;
+  border: 1px solid var(--ion-color-light);
+}
+
+.general-tips h4 {
+  color: var(--ion-color-primary);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.tip-item {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--ion-color-light);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tip-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tip-item strong {
+  color: var(--ion-color-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* 手风琴样式优化 */
+ion-accordion.current-algorithm ion-item {
+  --background: var(--ion-color-primary-tint);
+  --color: var(--ion-color-primary-contrast);
+}
+
+ion-accordion ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-accordion ion-item h3 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+ion-accordion ion-item p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 动画效果 */
+.algorithm-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .algorithm-content {
+    padding: 12px;
+  }
+  
+  .general-tips {
+    padding: 12px;
+  }
+}
