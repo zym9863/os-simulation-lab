@@ -106,7 +106,9 @@ const MemoryAllocation: React.FC = () => {
     
     if (result.success) {
       setAllocationRequests(prev => [...prev, { ...request, allocated: true, blockId: result.blockId }]);
-      setMemoryBlocks(result.newBlocks);
+      if (result.newBlocks) {
+        setMemoryBlocks(result.newBlocks);
+      }
       setAlertMessage(`成功为进程 ${request.processName} 分配了 ${request.size}KB 内存`);
     } else {
       setAllocationRequests(prev => [...prev, request]);
@@ -355,7 +357,7 @@ const MemoryAllocation: React.FC = () => {
                       <IonLabel>分配算法</IonLabel>
                       <IonSelect
                         value={algorithm}
-                        onSelectionChange={e => setAlgorithm(e.detail.value)}
+                        onIonChange={e => setAlgorithm(e.detail.value)}
                       >
                         <IonSelectOption value="FirstFit">首次适应 (First Fit)</IonSelectOption>
                         <IonSelectOption value="BestFit">最佳适应 (Best Fit)</IonSelectOption>

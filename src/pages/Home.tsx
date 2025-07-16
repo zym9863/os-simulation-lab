@@ -15,7 +15,7 @@ import {
   IonCol
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import { cpu, layers } from 'ionicons/icons';
+import { hardwareChipOutline as cpu, layers } from 'ionicons/icons';
 import './Home.css';
 
 const Home: React.FC = () => {

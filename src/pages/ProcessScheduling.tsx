@@ -191,7 +191,7 @@ const ProcessScheduling: React.FC = () => {
                       <IonLabel>调度算法</IonLabel>
                       <IonSelect
                         value={algorithm}
-                        onSelectionChange={e => setAlgorithm(e.detail.value)}
+                        onIonChange={e => setAlgorithm(e.detail.value)}
                         disabled={isRunning}
                       >
                         <IonSelectOption value="FCFS">先来先服务 (FCFS)</IonSelectOption>

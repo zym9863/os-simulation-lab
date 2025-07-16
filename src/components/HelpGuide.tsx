@@ -20,7 +20,7 @@ import {
   add, 
   settings, 
   analytics,
-  cpu,
+  hardwareChipOutline as cpu,
   layers,
   refresh
 } from 'ionicons/icons';
